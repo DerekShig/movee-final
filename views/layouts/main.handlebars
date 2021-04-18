@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>movee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/video-solid.svg">
+  {{!-- CSS --}}
+  <link rel="stylesheet" href="/css/style.css">
+  {{!-- bootstrap --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  {{!-- Swiper js --}}
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+</head>
+
+<body>
+
+  {{!-- NAVBAR --}}
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bolder fs-1 pb-3 align-middle" href="/">movee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-lg-0 fs-5">
+          <li class="nav-item">
+            <a class="nav-link" href="/all">All</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/movie">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/show">Shows</a>
+          </li>                    
+        </ul>
+        <ul class="navbar-nav fs-5">
+          {{#if user}}
+            <li class="nav-item">
+              <a class="nav-link" href="/user/logout">Logout</a>
+            </li>
+            {{#if user.admin}}          
+              <li class="nav-item">
+                <a class="nav-link" href="/user/admin">Dashboard</a>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link" href="/user/dashboard">Account</a>
+              </li>
+            {{/if}}                                  
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/user/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/login">Login</a>
+            </li>          
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {{!-- BODY CODE --}}
+  <main>
+    {{{body}}}
+  </main>
+
+  {{!-- FOOTER --}}
+  <footer class="mt-auto fs-5">
+    <div class="container-fluid">
+      <div class="row py-3">
+        <div class="col-md-12">
+          <div class="row mb-1">
+            <div class="col-md-12">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-telegram"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <a href="#">Info</a> &middot; <a href="#">Support</a> &middot; <a href="#">About Us</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <a href="#">Terms of Use</a> &middot; <a href="#">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="mb-0">@2021 movee</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {{!-- Bootstrap --}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  {{!-- Swiper js --}}
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 10,
+      spaceBetween: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 3,
+          spaceBetween: 1          
+        },
+        600: {
+          slidesPerView: 4,
+          spaceBetween: 2          
+        },
+        800: {
+          slidesPerView: 5,
+          spaceBetween: 3          
+        },
+        1000: {
+          slidesPerView: 5,
+          spaceBetween: 4          
+        },
+        1200: {
+          slidesPerView: 6,
+          spaceBetween: 4          
+        },        
+        1400: {
+          slidesPerView: 7,
+          spaceBetween: 4          
+        },
+        1600: {
+          slidesPerView: 8,
+          spaceBetween: 4          
+        },
+        1800: {
+          slidesPerView: 10,
+          spaceBetween: 4          
+        },             
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+{{!-- MAIN HERO --}}
+<div class="home-page container-fluid">
+	<div class="row hero">
+		<div class="col-md-4 col-sm-4 col-8 d-flex justify-content-md-end justify-content-center mx-auto">
+      <img src="/assets/hero_image.svg" class="img-fluid" style="width: 20rem;">
+		</div>
+		<div class="col-md-8 col-sm-8 d-flex flex-column justify-content-center px-4 px-md-3">
+      <h1 class="fw-bold">Unlimited movies, TV shows, and <span class="underline">more.</span></h1>
+      <h2 class="fw-bold">Watch anywhere. Cancel anytime.</h2>
+      <div class="text-center text-md-start text-sm-start">
+        <a href="/movie"><button type="button" class="btn mt-3 me-1 button ">Browse Movies</button></a>
+        <a href="/show"><button type="button" class="btn mt-3 ms-1 button ">Browse TV Shows</button></a>
+      </div>
+		</div>
+	</div>
+</div>
+
+{{!-- FEATURED MOVIES --}}
+<div class="home-page container-fluid">
+  <h2>Featured Movies</h2>
+  <div class="swiper-container mt-1">
+    <div class="swiper-wrapper">
+      {{#each movies}}
+        <div class="swiper-slide">
+        <a href="/{{type}}/{{id}}" class="d-flex flex-column text-center" style="width: 7rem;">
+          <img src="{{imgS}}" alt="{{title}}" class="rounded" style="width: 7rem;">
+        </a>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+{{!-- 90S ADVERT BANNER --}}
+<div class="home-page container-fluid">
+  <img src="/assets/banners/test.svg" class="img-fluid">
+</div>
+
+{{!-- FEATURED SHOWS --}}
+<div class="home-page container-fluid">
+  <h2>Featured Shows</h2>
+  <div class="swiper-container mt-1">
+    <div class="swiper-wrapper">
+      {{#each shows}}
+        <div class="swiper-slide">
+        <a href="/{{type}}/{{id}}" class="d-flex flex-column text-center" style="width: 7rem;">
+          <img src="{{imgS}}" alt="{{title}}" class="rounded" style="width: 7rem;">
+        </a>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+{{!-- HERO MP4 --}}
+<div class="home-page container-fluid mx-auto">
+	<div class="row hero">
+		<div class="col-md-7 col-lg-7 d-flex flex-column justify-content-center justify-content-end px-4 px-md-3">
+      <h2 class="fw-bolder">Watch <span class="underline">everywhere.</span></h2>
+      <h3 class="">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</h3>
+		</div>    
+		<div class="col-9 col-sm-7 col-md-4 col-lg-5 col-xl-4 text-center d-flex flex-column justify-content-center mt-2 mt-md-0 mx-auto mx-md-0">
+      <video width="300" autoplay muted loop class="rounded">
+        <source src="/assets/banners/movie_hero.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+      </video>
+		</div>
+	</div>
+</div>

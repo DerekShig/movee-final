@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none !important;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 0rem 5rem !important;
+  background-color: rgb(241, 240, 255) !important;
+}
+
+.navbar a {
+  color: black !important;
+}
+
+/* PAGE SIZING */
+.home-page {
+  width: 70% !important;
+  margin: 40px auto !important;
+}
+
+.main {
+  width: 90% !important;
+  margin: 40px auto !important;
+}
+
+
+/* UNDERLINE ACCENT */
+.underline {
+  background-image: linear-gradient(rgba(108, 99, 255, 0.4), rgba(108, 99, 255, 0.4));
+  background-repeat: no-repeat;
+  background-size: 100% 0.4em;
+  background-position: 0 85%;
+}
+
+.error {
+  color: #b60000;
+}
+
+/* Show / hide elements */
+
+.display-none {
+  display: none !important;
+}
+
+/* FOOTER STICK TO BOTTOM */
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  color: black !important;
+  background-color: rgb(241, 240, 255) !important;
+}
+
+footer i {
+  font-size: 2rem;
+  margin: 5px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black !important;
+}
+
+footer .bi-facebook:hover {
+  color: #4267B2;
+}
+
+footer .bi-twitter:hover {
+  color: #08a0e9;
+}
+
+footer .bi-youtube:hover {
+  color: #ff0000;
+}
+
+footer .bi-telegram:hover {
+  color: #0088cc;
+}
+
+/* HERO MP4 */
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* LOGIN / REGISTER FORMS */
+.form {
+  max-width: 700px !important;
+  margin: 40px auto !important;
+}
+
+/* ADD PRODUCT FORM */
+#addProductForm {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#admin-controls form, #purchase form {
+  display: inline-block;
+}
+
+/* INDIVIDUAL MOVIE / SHOW */
+.desc {
+  margin: 40px auto !important;
+}
+
+/* ALL MOVIES / SHOWS */
+.allProducts a {
+  text-decoration: none;
+}
+
+/* BUTTONS */
+.submit {
+  background-color: rgb(108, 99, 255) !important;
+  color: white !important;
+}
+
+.button {
+  background-color: rgb(228, 226, 255) !important;
+  color: black !important;
+}
+
+/* CRUD forms */
+
+.modal-body form  {
+  display: inline-block;
+}
+
+/* Checkout Form */
+#checkout-form {
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+/* SWIPERJS */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 840px) {
+ .navbar {
+   padding: 0.5rem 0.5rem !important;
+ }
+ /* .cardDesc {
+   width: 8rem !important;
+ } */
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-page {
+    width: 100% !important;
+  }
+}

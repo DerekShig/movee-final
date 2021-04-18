@@ -1,0 +1,36 @@
+<div class="container form">
+  <h1 class="mb-4">Register</h1>
+  <form action="/user/register" method="POST">
+    <div class="row">
+      <div class="mb-3 col-md-6 form-floating">
+        <input type="text" class="form-control {{ error.firstName }}" id="registerFirstName" placeholder="John" name="firstName" value="{{ first }}">
+        <label for="registerFirstName" class="form-label" style="padding-left: 24px !important;">First Name</label>
+        <div class="invalid-feedback">
+          Please enter your first name.
+        </div>               
+      </div>
+      <div class="mb-3 col-md-6 form-floating">
+        <input type="text" class="form-control {{ error.lastName }}" id="registerLastName" placeholder="Smith" name="lastName" value="{{ last }}">
+        <label for="registerLastName" class="form-label" style="padding-left: 24px !important;">Last Name</label>
+        <div class="invalid-feedback">
+          Please enter your last name.
+        </div>            
+      </div>
+    </div>
+    <div class="mb-3 form-floating">          
+      <input class="form-control {{ error.email }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com" name="email" value="{{ email }}">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <div class="invalid-feedback">
+          {{error.emailMsg}}
+        </div>                    
+    </div>
+    <div class="mb-3 form-floating">              
+      <input type="password" class="form-control {{ error.password }}" id="exampleInputPassword1" placeholder="password" name="password">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <div class="invalid-feedback">
+        Please enter a valid password. Minimum 5 characters, at least one number and one upper case letter.
+      </div>          
+    </div>
+    <button type="submit" class="btn submit">Register</button>
+  </form>
+</div>

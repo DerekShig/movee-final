@@ -1,0 +1,55 @@
+<div class="container desc">
+	<div class="row">
+		<div class="col-md-12">
+      {{!-- {{#ifEq success "added"}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Success!</strong> Item was added to cart.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {{/ifEq}}
+      {{#ifEq success "notAdded"}}
+        <div class="alert alert-danger" role="alert">
+          Item was already in your cart!
+        </div>      
+      {{/ifEq}} --}}
+			<img src="{{products.imgB}}" class="img-fluid mb-4"/>
+			<div class="row">
+				<div class="col-md-2 col-sm-4 text-center">
+					<img src="{{products.imgS}}" alt="{{products.title}}" class="img-fluid rounded mb-lg-0 mb-md-0 mb-sm-0 mb-3"/>
+				</div>
+				<div class="col-md-10 col-sm-8">
+					<div class="row">
+						<div class="col-md-10">
+						<div class="col-md-12">
+              <h1>{{products.title}} ({{products.year}})</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+              <span class="badge rounded-pill bg-dark">{{products.run}}</span>
+              <span class="badge rounded-pill bg-dark">{{products.rating}}</span>
+              {{#each products.genre}}
+                <span class="badge rounded-pill bg-dark">{{this}}</span>
+              {{/each}}              
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-10 col-12 mt-4">
+              <p class="fs-5">{{products.desc}}</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-10 col-12" id="purchase">
+              <form action="/user/addCart/{{products.type}}/{{products.rent}}/{{products.id}}" method="POST">
+                <button type="submit" class="btn submit">Rent ${{products.rent}}</button>
+              </form>
+              <form action="/user/addCart/{{products.type}}/{{products.buy}}/{{products.id}}" method="POST">
+                <button type="submit" class="btn submit">Buy ${{products.buy}}</button>
+              </form>              
+						</div>
+					</div>          
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,97 @@
+<div class="allProducts main">
+
+  <form ref='uploadForm' 
+      id="addProductForm"
+      encType="multipart/form-data"       
+      action="/user/add" 
+      method="POST">
+    <h1 class="mb-3">Add Product</h1>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control {{error.title}}" id="title" aria-describedby="title" name="title" value="{{title}}">
+      <div class="invalid-feedback">
+        Please enter a title.
+      </div>
+    </div>
+    <div class="mb-3">
+      <input class="form-check-input" type="radio" name="type" id="movie" value="movie" checked>
+      <label class="form-check-label me-3" for="movie">Movie</label>
+      <input class="form-check-input" type="radio" name="type" id="show" value="show">
+      <label class="form-check-label me-3" for="show">Show</label>
+      <input class="form-check-input" type="checkbox" id="featured" name="featured">
+      <label class="form-check-label" for="featured">Featured</label>            
+    </div>
+    <div class="mb-3 row">
+      <div class="col-12 col-sm-4">
+        <label for="Year" class="form-label">Year</label>
+        <input type="text" class="form-control {{error.year}}" id="Year" aria-describedby="Year" name="year" value="{{year}}">
+        <div class="invalid-feedback">
+          Please enter a year. Must be a valid number.
+        </div>        
+      </div>
+      <div class="col-12 col-sm-4">
+        <label for="run" class="form-label">Run Time</label>
+        <input type="text" class="form-control {{error.run}}" id="run" aria-describedby="run" name="run" value="{{run}}">
+        <div class="invalid-feedback">
+          Please enter a run time.
+        </div>        
+      </div>
+      <div class="col-12 col-sm-4">
+        <label for="Rating" class="form-label">Rating</label>
+        <input type="text" class="form-control {{error.rating}}" id="Rating" name="rating" aria-describedby="Rating" value="{{rating}}">
+      </div>
+      <div class="invalid-feedback">
+        Please enter a rating.
+      </div>                       
+    </div>
+    <div class="mb-3">
+      <label for="Genre" class="form-label">Genre</label>
+      <input type="text" class="form-control {{error.genre}}" id="Genre" aria-describedby="Genre" name="genre" value="{{genre}}">
+      <div id="Genre" class="form-text">Enter in genres, seperated by commas.</div>
+      <div class="invalid-feedback">
+        Please enter in genres, seperated by commas.
+      </div>            
+    </div>
+    <div class="mb-3 row">
+      <div class="col-12 col-sm-6">
+        <label for="Rent" class="form-label">Rent Price</label>
+        <input type="text" class="form-control {{error.rent}}" id="Rent" aria-describedby="Rent" name="rent" value="{{rent}}">
+        <div class="invalid-feedback">
+          Please enter a rent price. Must be a valid number.
+        </div>        
+      </div>
+      <div class="col-12 col-sm-6">
+        <label for="Buy" class="form-label">Buy Price</label>
+        <input type="text" class="form-control {{error.buy}}" id="Buy" aria-describedby="Buy" name="buy" value="{{buy}}">
+        <div class="invalid-feedback">
+          Please enter a buy price. Must be a valid number.
+        </div>        
+      </div>               
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Movie / Show Description</label>
+      <textarea class="form-control {{error.desc}}" id="desc" rows="3" name="desc">{{desc}}</textarea>
+      <div class="invalid-feedback">
+        Please enter a description.
+      </div>      
+    </div>
+    <div class="mb-3 row">
+      <div class="col-12 col-sm-6">
+        <label for="imageSmall" class="form-label">Poster Image</label><br>
+        <input type="file" name="imageSmall" class="{{error.imageSmall}}">
+        <div class="invalid-feedback">
+          Required. File must be an image.
+        </div>         
+      </div>
+      <div class="col-12 col-sm-6">
+        <label for="imageBig" class="form-label {{error.imageBig}}">Banner Image</label><br>
+        <input type="file" name="imageBig">
+        <div class="invalid-feedback">
+          File must be an image.
+        </div>         
+      </div>               
+    </div>    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>  
+
+</div>  

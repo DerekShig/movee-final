@@ -1,0 +1,32 @@
+{
+  "name": "part-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "startdev": "nodemon index.js -L"
+  },
+  "author": "Derek Shigetomi",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "@sendgrid/mail": "^7.4.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-flash": "git://github.com/RGBboy/express-flash.git",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "handlebars-helper-equal": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "nodemon": "^2.0.7"
+  }
+}
