@@ -38,7 +38,8 @@
               <p class="fs-5">{{products.desc}}</p>
 						</div>
 					</div>
-          {{#ifEq user.admin "false"}}
+          {{#if user.admin}}
+          {{else}}
 					<div class="row">
 						<div class="col-md-10 col-12" id="purchase">
               <form action="/user/addCart/{{products.type}}/{{products.rent}}/{{products.id}}" method="POST">
@@ -48,8 +49,8 @@
                 <button type="submit" class="btn submit">Buy ${{products.buy}}</button>
               </form>              
 						</div>
-					</div>   
-          {{/ifEq}}       
+					</div>             
+          {{/if}}       
 				</div>
 			</div>
 		</div>
