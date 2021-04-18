@@ -12,7 +12,6 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // To delete images when new one uploaded or when product deleted
-const fs = require('fs')
 
 module.exports = {
 
@@ -316,10 +315,6 @@ module.exports = {
 
   deleteProduct : function (req, res) {
     productModel.findOneAndDelete({_id: req.params.id}, function(err, prod) {
-      fs.unlinkSync('public' + prod.imgS);
-      if (prod.imgB) {
-        fs.unlinkSync('public' + prod.imgB);
-      }
       res.redirect('/user/admin');
     })
   },
@@ -405,14 +400,10 @@ module.exports = {
           if (images[i] == 'imageSmall') {
             req.files['imageSmall'].mv('public/assets/product-images/' + req.session.user._id + req.files['imageSmall'].name);
             imageS = '/assets/product-images/' + req.session.user._id + req.files['imageSmall'].name;
-            fs.unlinkSync('public' + req.body.imgS);
           }
           else if (images[i] == 'imageBig') {
             req.files['imageBig'].mv('public/assets/desc-banners/' + req.session.user._id + req.files['imageBig'].name);
             imageB = '/assets/desc-banners/' + req.session.user._id + req.files['imageBig'].name;
-            if (req.body.imgB) {
-              fs.unlinkSync('public' + req.body.imgB);
-            }
           }
         }
       }
