@@ -134,22 +134,22 @@ module.exports = {
     }
     // If no errors, go to dashboard page, else go back to register page with errors.
     if (errors.cnt == 0) {
-// const msg = {
-      //   to: req.body.email, // Change to your recipient
-      //   from: 'derekshigetomi.dgs@gmail.com', // Change to your verified sender
-      //   subject: 'Welcome to movee!',
-      //   text: 'Check out our huge library of movies and shows.',
-      //   html: `Hi ${req.body.firstName}!<br><p>Thank you for signing up for movee. You now have access to <strong>thousands</strong> of popular movies and shows 
-      //   at your fingertips. Visit our website and start watching now!</p><p>From the movee team</p>`,
-      // }
-      // sgMail
-      //   .send(msg)
-      //   .then(() => {
-      //     console.log('Email sent')
-      //   })
-      //   .catch((error) => {
-      //     console.error(error)
-      //   })
+      const msg = {
+        to: req.body.email, // Change to your recipient
+        from: 'derekshigetomi.dgs@gmail.com', // Change to your verified sender
+        subject: 'Welcome to movee!',
+        text: 'Check out our huge library of movies and shows.',
+        html: `Hi ${req.body.firstName}!<br><p>Thank you for signing up for movee. You now have access to <strong>thousands</strong> of popular movies and shows 
+        at your fingertips. Visit our website and start watching now!</p><p>From the movee team</p>`,
+      }
+      sgMail
+        .send(msg)
+        .then(() => {
+        console.log('Email sent')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
       const user = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
