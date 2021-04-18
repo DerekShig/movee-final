@@ -51,7 +51,7 @@ app.use(session({
 app.use((req, res, next) => {
   res.locals.user = req.session.user;
   res.locals.message = req.session.message;
-  res.locals.success = req.session.success;
+  delete req.session.message;
   next();
 })
 

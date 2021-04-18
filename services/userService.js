@@ -205,13 +205,14 @@ module.exports = {
 
   addToCart : function (req, res) {
     productModel.findOne({_id: req.params.id}, function(err, prod) {
-      let success = 'notAdded';
-      let message = 'Sorry, that item is already in your cart';
+      let message = {};
+      message.success = 'notAdded';
+      message.message = 'Sorry, that item is already in your cart';
       // Only add to cart if not already in cart
       if (!req.session.cart.items.find(movie => movie._id == req.params.id)) {
         req.session.cart.items.push(prod);
-        message = 'Item added to cart!';
-        success = 'added';
+        message.message = 'Item added to cart!';
+        message.success = 'added';
         req.session.cart.total += parseFloat(req.params.price);
         req.session.cart.total = Math.round(req.session.cart.total * 100) / 100;
         for (let i = 0; i < req.session.cart.items.length; i++) {
@@ -220,10 +221,9 @@ module.exports = {
           }
         }
       }
-      req.session.success = success;
       req.session.message = message;
-      res.redirect('/user/dashboard');
-      //res.redirect(`/${req.params.type}/${req.params.id}`);
+      //res.redirect('/user/dashboard');
+      res.redirect(`/${req.params.type}/${req.params.id}`);
     })
   },
 
